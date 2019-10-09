@@ -18,4 +18,6 @@ npm install
 ```
 
 ## Screenshots
-![Houses View](../assets/screenshots/GOT_Houses.jpg?raw=true)
+![Houses View](./assets/screenshots/GOT_Houses.jpg)
+
+![Houses Mobile View](./assets/screenshots/GOT_Houses_Mobile.jpg)

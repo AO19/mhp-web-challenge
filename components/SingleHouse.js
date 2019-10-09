@@ -21,12 +21,12 @@ const HouseStyles = styled.div`
     border: 5px solid gold;
     padding: 5px;
     background-color: white;
-  }
-  #lordName a {
-    text-decoration: none;
-    color: inherit;
-    & :hover {
-      color: gold;
+    a {
+      text-decoration: none;
+      color: inherit;
+      & :hover {
+        color: gold;
+      }
     }
   }
 `;
@@ -60,16 +60,18 @@ export default class SingleHouse extends Component {
       return null;
     }
     let currentLordId;
+    let founderId;
     if (house.currentLord.url) currentLordId = house.currentLord.url.match(/([^\/]+$)/g);
+    if (house.founder.url) founderId = house.founder.url.match(/([^\/]+$)/g);
     return (
       <Center>
         <HouseStyles>
           <p>{house.name}</p>
-          <p>founded {house.founded ? house.founded : 'Unknown'} by {house.founder.name ? house.founder.name : 'Unknown'}</p>
+          <p>founded {house.founded ? house.founded : 'Unknown'} by {house.founder.name ? <Link href={{ pathname: '/character', query: { id: founderId } }}>{house.founder.name}</Link> : 'Unknown'}</p>
           <p>Located in <u>{house.region}</u></p>
-          {house.coatOfArms ? <p id='coa'>"{house.coatOfArms}"</p> : ''}
+          {house.coatOfArms ? <p>"{house.coatOfArms}"</p> : ''}
           <p><u>Overlord</u>: {house.overlord ? house.overlord.name : '~ Unknown Overlord ~'}</p>
-          <p id='lordName'><u>Lord</u>: {house.currentLord ? <Link href={{ pathname: '/character', query: { id: currentLordId } }}>{house.currentLord.name}</Link> : '~ Unknown Lord ~'}</p>
+          <p><u>Lord</u>: {house.currentLord ? <Link href={{ pathname: '/character', query: { id: currentLordId } }}>{house.currentLord.name}</Link> : '~ Unknown Lord ~'}</p>
           <SwornMembersStyles>
             <u>Sworn Members ({house.swornMembers.length})</u>:
             <>

@@ -56,7 +56,8 @@ export default class SingleHouse extends Component {
     if (house === null) {
       return null;
     }
-    const currentLordId = house.currentLord.url.match(/([^\/]+$)/g);
+    let currentLordId;
+    if (house.currentLord.url) currentLordId = house.currentLord.url.match(/([^\/]+$)/g);
     return (
       <Center>
         <HouseStyles>

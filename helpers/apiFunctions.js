@@ -21,6 +21,14 @@ async function getFounder(founderLink) {
 
 async function getCharacter(person) {
   const character = await fetch(person).then(response => response.json());
+  if (character.father) {
+    const father = await fetch(character.father).then(response => response.json());
+    character.father = father;
+  }
+  if (character.mother) {
+    const mother = await fetch(character.mother).then(response => response.json());
+    character.mother = mother;
+  }
   return character;
 }
 

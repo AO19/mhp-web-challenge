@@ -53,7 +53,7 @@ export default class SingleCharacter extends Component {
         <CharacterStyles>
           <p>{character.name} ({character.born} - †{character.died})</p>
           <p>{character.gender}</p>
-          {character.father || character.mother ? <p>{character.father ? character.father : 'Unknown'} (Father) and {character.mother ? character.mother : 'Unknown'} (Mother)</p> : <p>Unknown Parents</p>}
+          {character.father || character.mother ? <p>{character.father.name ? character.father.name : 'Unknown'} (Father) and {character.mother.name ? character.mother.name : 'Unknown'} (Mother)</p> : <p>Unknown Parents</p>}
         </CharacterStyles>
       </BiggerCenter>
     )

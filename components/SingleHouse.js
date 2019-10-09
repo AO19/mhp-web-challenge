@@ -17,7 +17,10 @@ const HouseStyles = styled.div`
   align-items: center;
   letter-spacing: 0.25rem;
   max-width: 80vw;
-  #coa {
+  p {
+    border: 5px solid gold;
+    padding: 5px;
+    background-color: white;
   }
   #lordName a {
     text-decoration: none;
@@ -68,7 +71,7 @@ export default class SingleHouse extends Component {
           <p><u>Overlord</u>: {house.overlord ? house.overlord.name : '~ Unknown Overlord ~'}</p>
           <p id='lordName'><u>Lord</u>: {house.currentLord ? <Link href={{ pathname: '/character', query: { id: currentLordId } }}>{house.currentLord.name}</Link> : '~ Unknown Lord ~'}</p>
           <SwornMembersStyles>
-            <u>Sworn Members</u>:
+            <u>Sworn Members ({house.swornMembers.length})</u>:
             <>
               {house.swornMembers.map(
                 member => {

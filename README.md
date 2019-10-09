@@ -17,6 +17,12 @@ Clone this repo and:
 npm install
 ```
 
+## Live Demo
+
+The Game Of Thrones Font might not load in this version.
+
+[Demo](https://mhp-web-challenge-1wvvslqsk.now.sh/)
+
 ## Screenshots
 ![Houses View](./assets/screenshots/GOT_Houses.jpg)
 
